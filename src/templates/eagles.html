@@ -1,0 +1,24 @@
+<div class="content-header">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="header-section">
+                <h1>Troop 215 Eagle Scouts</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div v-for="scout in Eagles" class="col-sm-6 col-md-4 col-xs-12 scoutContainer">
+        <a href="javascript:void(0)" class="widget">
+            <div class="widget-content themed-background metaData">
+                <div class="pull-left">#{{ scout.sc_number }}</div>
+                <div class="pull-right" v-dateshow="scout.sc_date"></div>
+            </div>
+            <div class="widget-content text-center">
+                <img v-if="scout.image == null" src="/images/sc-logo.jpg" alt="avatar" class="img-circle img-thumbnail img-thumbnail-avatar-2x">
+                <img v-else v-bind:src="'/images/eagles/' + scout.image.img_file" alt="avatar" class="img-circle img-thumbnail img-thumbnail-avatar-2x">
+                <h2 class="widget-heading h3 scoutName">{{ scout.sc_name }}</h2>
+            </div>
+        </a>
+    </div>
+</div>
